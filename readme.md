@@ -21,7 +21,6 @@ python miao.py convert <input.png> <output.miao>
 python miao.py display <file.miao> 
 ```
 ### demo img
-it will take long to load
 ```
 python miao.py demo
 ```
