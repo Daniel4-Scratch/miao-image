@@ -1,18 +1,25 @@
 VSVersionInfo(
-       ffi=FixedFileInfo(
-       filevers=(ProductVersions),
-       prodvers=(ProductVersions),
-       mask=0x3f,
-       flags=0x0,
-       OS=0x40004,
-       fileType=0x1,
-       subtype=0x0,
-       date=(0, 0)),
-       kids=[StringFileInfo([StringTable(
-       u'040904B0',
-       [StringStruct(u'FileDescription', u'Miao image viewer and converter'),
-       StringStruct(u'ProductName', u'Miao Viewer'),
-       StringStruct(u'ProductVersion', u'0.1.3'),
-       ])]), 
-       VarFileInfo([VarStruct(u'Translation', [1033, 1200])])]
-   )
+    ffi=FixedFileInfo(
+        filevers=(1, 0, 0, 0),
+        prodvers=(1, 0, 0, 0),
+        mask=0x3f,
+        flags=0x0,
+        OS=0x40004,
+        fileType=0x1,
+        subtype=0x0,
+        date=(0, 0)
+    ),
+    kids=[
+        StringFileInfo([
+            StringTable(
+                u'040904B0',
+                [
+                    StringStruct(u'FileDescription', u'Miao image viewer and converter'),
+                    StringStruct(u'ProductName', u'Miao Viewer'),
+                    StringStruct(u'ProductVersion', u'0.1.3'),
+                ]
+            )
+        ]),
+        VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
+    ]
+)
