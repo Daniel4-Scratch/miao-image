@@ -38,6 +38,10 @@
    "value": false
   },
   {
+   "optionDest": "version_file",
+   "value": "C:/Users/danie/Desktop/sandbox/miao/miao-image/version.rc"
+  },
+  {
    "optionDest": "embed_manifest",
    "value": true
   },
