@@ -34,6 +34,5 @@ python miao.py demo
 Settings > Import Config File from JSON > build.json
 ### pyinstaller
 ```
-pyinstaller --noconfirm --onefile --windowed --icon "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico" --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\demo.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\help.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico;."  "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.pyw"
-```
+pyinstaller --noconfirm --onefile --windowed --icon "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico" --version-file "C:\Users\danie\Desktop\sandbox\miao\miao-image\version.rc" --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\demo.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\help.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico;."  "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.pyw"```
 
