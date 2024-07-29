@@ -145,6 +145,9 @@ if len(sys.argv) > 1:
             print(zlib.decompress(f.read()).decode('utf-8'))
             f.close()
     else:
-        ImageDisplayer(resource_path("help.miao")).root.mainloop()
+        if os.path.isfile(sys.argv[1]):
+            ImageDisplayer(sys.argv[1]).root.mainloop()
+        else:
+            ImageDisplayer(resource_path("help.miao")).root.mainloop()
 else:
     ImageDisplayer(resource_path("help.miao")).root.mainloop()
