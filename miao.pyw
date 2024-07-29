@@ -5,6 +5,13 @@ import zlib
 import sys
 import os
 
+image_file_extensions = [
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".tif", ".webp", ".svg",
+    ".ico", ".heif", ".heic", ".raw", ".cr2", ".nef", ".orf", ".sr2", ".arw",
+    ".dng", ".rw2", ".pef", ".raf", ".3fr", ".ai", ".eps", ".psd"
+]
+
+
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -146,7 +153,11 @@ if len(sys.argv) > 1:
             f.close()
     else:
         if os.path.isfile(sys.argv[1]):
-            ImageDisplayer(sys.argv[1]).root.mainloop()
+            filename, file_extension = os.path.splitext(sys.argv[1])
+            if file_extension == ".miao":
+                ImageDisplayer(sys.argv[1]).root.mainloop()
+            elif file_extension in image_file_extensions:
+                save_image_data(sys.argv[1], filename+".miao")
         else:
             ImageDisplayer(resource_path("help.miao")).root.mainloop()
 else:
