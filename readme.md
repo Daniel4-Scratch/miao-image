@@ -29,3 +29,11 @@ python miao.py display <file.miao>
 python miao.py demo
 ```
 
+## Building Portable App
+### auto-py-to-exe
+Settings > Import Config File from JSON > build.json
+### pyinstaller
+```
+pyinstaller --noconfirm --onefile --windowed --icon "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico" --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\demo.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\help.miao;." --add-data "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.ico;."  "C:\Users\danie\Desktop\sandbox\miao\miao-image\miao.pyw"
+```
+

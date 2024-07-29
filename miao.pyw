@@ -44,6 +44,7 @@ class ImageDisplayer:
     def __init__(self, image_path=None):
         self.image_path = image_path
         self.root = tk.Tk()
+        self.root.iconbitmap(resource_path("miao.ico"))
         self.root.title("Miao Image Viewer")
         self.root.geometry("500x500")  # Set an initial size
 

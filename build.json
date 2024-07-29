@@ -18,6 +18,10 @@
    "value": false
   },
   {
+   "optionDest": "icon_file",
+   "value": "C:/Users/danie/Desktop/sandbox/miao/miao-image/miao.ico"
+  },
+  {
    "optionDest": "clean_build",
    "value": false
   },
@@ -72,6 +76,10 @@
   {
    "optionDest": "datas",
    "value": "C:/Users/danie/Desktop/sandbox/miao/miao-image/help.miao;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/danie/Desktop/sandbox/miao/miao-image/miao.ico;."
   }
  ],
  "nonPyinstallerOptions": {
