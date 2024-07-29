@@ -5,6 +5,16 @@ import zlib
 import sys
 import os
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 # Function to save the image data
 def save_image_data(image_path, output_path):
     im = Image.open(image_path)
@@ -128,12 +138,12 @@ if len(sys.argv) > 1:
             ImageDisplayer(sys.argv[2]).root.mainloop()
     elif sys.argv[1] == "demo":
         print("the demo file is large it will take a while to load")
-        ImageDisplayer(os.path.dirname(os.path.realpath(__name__))+"/cat.miao").root.mainloop()
+        ImageDisplayer(resource_path("demo.miao")).root.mainloop()
     elif sys.argv[1] == "decode":
         with open(sys.argv[2]) as f:
             print(zlib.decompress(f.read()).decode('utf-8'))
             f.close()
     else:
-        ImageDisplayer(os.path.dirname(os.path.realpath(__name__))+"/help.miao").root.mainloop()
+        ImageDisplayer(resource_path("help.miao")).root.mainloop()
 else:
-    ImageDisplayer(os.path.dirname(os.path.realpath(__name__))+"/help.miao").root.mainloop()
+    ImageDisplayer(resource_path("help.miao")).root.mainloop()
