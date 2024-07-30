@@ -1,7 +1,7 @@
 from PIL import Image, ImageTk
 import tkinter as tk
-import base64
-import zlib
+from zlib import compress as zlibcompress
+from zlib import decompress as zlibdecompress
 import sys
 import os
 
@@ -42,7 +42,7 @@ def save_image_data(image_path, output_path):
 
         image += "\n"
 
-    compressed_image = zlib.compress(image.encode('utf-8'))
+    compressed_image = zlibcompress(image.encode('utf-8'))
 
     with open(output_path, "wb") as f:
         f.write(compressed_image)
@@ -70,7 +70,7 @@ class ImageDisplayer:
             with open(self.image_path, "rb") as f:
                 compressed_image = f.read()
 
-            image_data = zlib.decompress(compressed_image).decode('utf-8')
+            image_data = zlibdecompress(compressed_image).decode('utf-8')
 
             # Create a new image
             width = len(image_data.split('\n')[0]) // 9
@@ -90,7 +90,7 @@ class ImageDisplayer:
 
     def raw(self, imagedata):
         # imagedata should be a string containing the encoded image data
-        image_data = zlib.decompress(imagedata).decode('utf-8')
+        image_data = zlibdecompress(imagedata).decode('utf-8')
 
         # Create a new image
         width = len(image_data.split('\n')[0]) // 9
@@ -149,7 +149,7 @@ if len(sys.argv) > 1:
         ImageDisplayer(resource_path("demo.miao")).root.mainloop()
     elif sys.argv[1] == "decode":
         with open(sys.argv[2]) as f:
-            print(zlib.decompress(f.read()).decode('utf-8'))
+            print(zlibdecompress(f.read()).decode('utf-8'))
             f.close()
     else:
         if os.path.isfile(sys.argv[1]):
