@@ -22,6 +22,10 @@
    "value": "miao.ico"
   },
   {
+   "optionDest": "name",
+   "value": "Miao Viewer"
+  },
+  {
    "optionDest": "clean_build",
    "value": false
   },

@@ -14,9 +14,9 @@ VSVersionInfo(
             StringTable(
                 u'040904B0',
                 [
-                    StringStruct(u'FileDescription', u'Miao image viewer and converter'),
-                    StringStruct(u'ProductName', u'Miao Viewer'),
-                    StringStruct(u'ProductVersion', u'0.1.4'),
+                    StringStruct(u'FileDescription', u'Miao Image'),
+                    StringStruct(u'ProductName', u'Miao Image'),
+                    StringStruct(u'ProductVersion', u'0.1.5'),
                 ]
             )
         ]),
