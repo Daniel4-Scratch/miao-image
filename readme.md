@@ -5,6 +5,7 @@ reasons not to use
 - slow asf
 - large file size
 - unoptimised, prune to crashes
+- its made for windows only
 
 reasons to use
 

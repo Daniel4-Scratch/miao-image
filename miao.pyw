@@ -2,15 +2,16 @@ from PIL import Image, ImageTk
 import tkinter as tk
 from zlib import compress as zlibcompress
 from zlib import decompress as zlibdecompress
-import sys
-import os
+import sys, os
+import json, urllib.request
+from win10toast_click import ToastNotifier
+import webbrowser
+import platform
 
-image_file_extensions = [
-    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".tif", ".webp", ".svg",
-    ".ico", ".heif", ".heic", ".raw", ".cr2", ".nef", ".orf", ".sr2", ".arw",
-    ".dng", ".rw2", ".pef", ".raf", ".3fr", ".ai", ".eps", ".psd"
-]
-
+version = "0.1.6"
+endpoints = {
+    "latest": "https://api.github.com/repos/daniel4-scratch/miao-image/releases/latest"
+}
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -21,6 +22,33 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
+
+def open_latest():
+    webbrowser.open("https://github.com/Daniel4-Scratch/miao-image/releases/latest")
+
+def update_check():
+    with urllib.request.urlopen(endpoints["latest"]) as url:
+        data = json.loads(url.read().decode())
+        ver = data["tag_name"].split("v")[1]
+        #check if version >
+        if ver > version:
+            toaster = ToastNotifier() 
+            toaster.show_toast("Miao Image","A new update is available!",icon_path=resource_path("miao.ico"),duration=5,threaded=True,callback_on_click=open_latest)
+        else:
+            print("You are up to date")
+
+if platform.system() == "Windows":
+    update_check()
+
+
+image_file_extensions = [
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".tif", ".webp", ".svg",
+    ".ico", ".heif", ".heic", ".raw", ".cr2", ".nef", ".orf", ".sr2", ".arw",
+    ".dng", ".rw2", ".pef", ".raf", ".3fr", ".ai", ".eps", ".psd"
+]
+
+
+
 
 # Function to save the image data
 def save_image_data(image_path, output_path):
