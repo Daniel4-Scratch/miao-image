@@ -8,7 +8,7 @@ from win10toast_click import ToastNotifier
 import webbrowser
 import platform
 
-version = "0.1.6"
+version = "0.1.7"
 endpoints = {
     "latest": "https://api.github.com/repos/daniel4-scratch/miao-image/releases/latest"
 }
@@ -47,8 +47,17 @@ image_file_extensions = [
     ".dng", ".rw2", ".pef", ".raf", ".3fr", ".ai", ".eps", ".psd"
 ]
 
+def spit_json(image_path):
+    filename, file_extension = os.path.splitext(image_path)
+    if file_extension == ".miao":
+        with open(image_path, "rb") as f:
+            compressed_image = f.read()
 
+        image_data = zlibdecompress(compressed_image).decode('utf-8')
 
+        print(image_data)
+    else:
+        print("Not a valid miao file")
 
 # Function to save the image data
 def save_image_data(image_path, output_path):
@@ -175,10 +184,8 @@ if len(sys.argv) > 1:
     elif sys.argv[1] == "demo":
         print("the demo file is large it will take a while to load")
         ImageDisplayer(resource_path("demo.miao")).root.mainloop()
-    elif sys.argv[1] == "decode":
-        with open(sys.argv[2]) as f:
-            print(zlibdecompress(f.read()).decode('utf-8'))
-            f.close()
+    elif sys.argv[1] == "spit":
+        spit_json(sys.argv[2])
     else:
         if os.path.isfile(sys.argv[1]):
             filename, file_extension = os.path.splitext(sys.argv[1])

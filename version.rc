@@ -16,7 +16,7 @@ VSVersionInfo(
                 [
                     StringStruct(u'FileDescription', u'Miao Image'),
                     StringStruct(u'ProductName', u'Miao Image'),
-                    StringStruct(u'ProductVersion', u'0.1.6'),
+                    StringStruct(u'ProductVersion', u'0.1.7'),
                 ]
             )
         ]),
