@@ -1,0 +1,5 @@
+zlib
+pillow
+win10toast_click
+urllib
+webbrowser
