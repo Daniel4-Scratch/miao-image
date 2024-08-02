@@ -1,11 +1,12 @@
 # Miao Image File Type
 
+a file type that stores images in a miao format
+
 reasons not to use
 
 - slow asf
 - large file size
 - unoptimised, prune to crashes
-- its made for windows only
 
 reasons to use
 
@@ -13,6 +14,8 @@ reasons to use
 
 ![image](https://github.com/user-attachments/assets/487658a6-b13b-4763-add7-7cbe8abf2ef7)
 
+## notes
+- i will try to keep this project cross platform compatible, but i will not be able to test it on other platforms. I recommend using windows for this project
 
 
 ## how to use
