@@ -34,8 +34,6 @@ def update_check():
             answer = messagebox.askyesno("Miao Image","Update available, would you like to open the latest release page?")
             if answer:
                 open_latest()
-        else:
-            print("You are up to date")
 
 update_check()
 
