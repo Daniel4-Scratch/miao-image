@@ -12,32 +12,11 @@ reasons to use
 
 - its funny
 
-![image](https://github.com/user-attachments/assets/487658a6-b13b-4763-add7-7cbe8abf2ef7)
+<img src="https://github.com/user-attachments/assets/487658a6-b13b-4763-add7-7cbe8abf2ef7" width=500>
 
-## notes
+## Notes
 - i will try to keep this project cross platform compatible, but i will not be able to test it on other platforms. I recommend using windows for this project
 
 
-## how to use
-### convert png to miao
-i recommend using png for the input file. try to use small sized pngs
-```bat
-python miao.py convert <input.png> <output.miao>
-```
-### display miao file
-```bat
-python miao.py display <file.miao> 
-```
-### demo img
-```
-python miao.py demo
-```
-
-## Building Portable App
-### auto-py-to-exe
-Settings > Import Config File from JSON > build.json
-### pyinstaller
-```
-pyinstaller --noconfirm --onefile --windowed --icon "miao.ico" --version-file "version.rc" --add-data "demo.miao;." --add-data "help.miao;." --add-data "miao.ico;."  "miao.pyw"
-```
-
+## Guide
+Visit the [Get Started](./docs/README.md) page to get started with Miao Image.
