@@ -4,9 +4,8 @@ from zlib import compress as zlibcompress
 from zlib import decompress as zlibdecompress
 import sys, os
 import json, urllib.request
-from win10toast_click import ToastNotifier
 import webbrowser
-import platform
+from tkinter import messagebox
 
 version = "0.1.7"
 endpoints = {
@@ -32,13 +31,13 @@ def update_check():
         ver = data["tag_name"].split("v")[1]
         #check if version >
         if ver > version:
-            toaster = ToastNotifier() 
-            toaster.show_toast("Miao Image","A new update is available!",icon_path=resource_path("miao.ico"),duration=5,threaded=True,callback_on_click=open_latest)
+            answer = messagebox.askyesno("Miao Image","Update available, would you like to open the latest release page?")
+            if answer:
+                open_latest()
         else:
             print("You are up to date")
 
-if platform.system() == "Windows":
-    update_check()
+update_check()
 
 
 image_file_extensions = [
