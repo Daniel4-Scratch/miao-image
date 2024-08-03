@@ -7,7 +7,7 @@ import json, urllib.request
 import webbrowser
 from tkinter import messagebox
 
-version = "0.1.7"
+version = "0.1.8"
 endpoints = {
     "latest": "https://api.github.com/repos/daniel4-scratch/miao-image/releases/latest"
 }
