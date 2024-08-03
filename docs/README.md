@@ -4,6 +4,7 @@
 - [Using EXE](./exe.md)
 - [Building from Source](./build.md)
 - [How it Works](./how.md)
+- [Using on Different Operating Systems](./os.md)
 
 ## About Miao Image
 reasons not to use
