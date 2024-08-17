@@ -17,6 +17,14 @@ Miao image can also conver through one parameter. If the given file path is a co
 miao.exe <input.png>
 ```
 
+## Convert Miao File to Png
+Miao Image can convert a miao file back into an image. The larger the image, the longer it will take to convert.
+```miao.exe png <input.miao> <output.png>```
+
+### Alternate Method
+Miao Image can also convert through two parameters. If the given file path is a miao file it will convert it. The output file will be located in the working directory with the same name as the input file but with the `.png` extension.
+```miao.exe png <input.miao>```
+
 ## Display Miao File
 Miao Image convert the miao file back into an image to display though a gui window.
 The larger the image, the longer it will take to display.

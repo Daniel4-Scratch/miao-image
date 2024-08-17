@@ -81,6 +81,27 @@ def save_image_data(image_path, output_path):
     with open(output_path, "wb") as f:
         f.write(compressed_image)
 
+def miao_to_png(image_path, output_path):
+    with open(image_path, "rb") as f:
+        compressed_image = f.read()
+
+    image_data = zlibdecompress(compressed_image).decode('utf-8')
+
+    # Create a new image
+    width = len(image_data.split('\n')[0]) // 9
+    height = len(image_data.split('\n')) - 1
+    im = Image.new("RGBA", (width, height))
+    pix = im.load()
+
+    for y, row in enumerate(image_data.split('\n')):
+        if row:
+            for x in range(width):
+                hex_value = row[x*9:(x+1)*9]
+                rgba = tuple(int(hex_value[i:i+2], 16) for i in (1, 3, 5, 7))
+                pix[x, y] = rgba
+
+    im.save(output_path)
+
 class ImageDisplayer:
     def __init__(self, image_path=None):
         self.image_path = image_path
@@ -175,6 +196,13 @@ if len(sys.argv) > 1:
     if sys.argv[1] == "convert":
         if os.path.isfile(sys.argv[2]):
             save_image_data(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == "png":
+        if os.path.isfile(sys.argv[2]):
+            #check if arg 3 wasnt provided
+            if len(sys.argv) < 4:
+                miao_to_png(sys.argv[2], sys.argv[2].replace(".miao", ".png"))
+            else:
+                miao_to_png(sys.argv[2], sys.argv[3])
     elif sys.argv[1] == "display":
         if os.path.isfile(sys.argv[2]):
             ImageDisplayer(sys.argv[2]).root.mainloop()
