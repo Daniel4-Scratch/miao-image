@@ -12,7 +12,7 @@ reasons to use
 
 - its funny
 
-<img src="https://github.com/user-attachments/assets/487658a6-b13b-4763-add7-7cbe8abf2ef7" width=500>
+![miao image working on windows ](https://github.com/user-attachments/assets/487658a6-b13b-4763-add7-7cbe8abf2ef7)
 
 ## Notes
 - i will try to keep this project cross platform compatible, but i will not be able to test it on other platforms. I recommend using windows for this project
