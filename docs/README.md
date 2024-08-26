@@ -29,12 +29,11 @@ Make sure you have either the `miao.pyw` file or the `miao.exe` file. If you don
 This documentaion will cover using the exe for examples, but you can replace `miao.exe` with `python miao.pyw` for the same results with the python file
 
 ## Convert Image to Miao File
-Miao Image supports most common image formats to convert into a Miao file. Its recommended to use small dimension images for quicker conversion, quicker loading and smaller file size.
+Miao Image supports most common image formats to convert into a Miao file. It is recommended to use small dimension images for quicker conversion, quicker loading and smaller file size.
 ```
 miao.exe convert <input.png> <output.miao>
 ```
-### Alternate Method
-Miao image can also conver through one parameter. If the given file path is a common image type it will convert it. The output file will be located in the working directory with the same name as the input file but with the `.miao` extension. 
+Alternatively you can use one parameter. The output file will be located in the working directory with the same file name but with the `.miao` file extension
 ```
 miao.exe <input.png>
 ```
@@ -44,9 +43,7 @@ Miao Image can convert a miao file back into an image. The larger the image, the
 ```
 miao.exe png <input.miao> <output.png>
 ```
-
-### Alternate Method
-Miao Image can also convert through two parameters. If the given file path is a miao file it will convert it. The output file will be located in the working directory with the same name as the input file but with the `.png` extension.
+Alternatively you can use two parameters to convert. The output file will be located in the working directory with the same name but with the `.png` extension
 ```
 miao.exe png <input.miao>
 ```
@@ -57,7 +54,6 @@ The larger the image, the longer it will take to display.
 ```
 miao.exe display <input.miao>
 ```
-### Alternate Method
 Miao Image can also display the miao file through one parameter. If the given file path is a miao file it will display it.
 ```
 miao.exe <input.miao>
@@ -127,8 +123,6 @@ auto-py-to-exe
 Miao Image is a file type that stores images in miao format.
 
 First of all miao image stores each hex value of each pixel in the image. The data is then compressed with [zlib](https://zlib.net/).
-> [!TIP]
-> You can fetch the hex data using the [spit cli command](cli.md#spit-hex-data)
 
 When displaying an image, the data is decompressed and built back into a temporary image so that the gui window can display the file.
 
