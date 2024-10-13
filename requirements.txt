@@ -1,4 +1,4 @@
-zlib
 pillow
-urllib
-webbrowser
+urllib3
+auto-py-to-exe
+pyinstaller

@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "miao.pyw"
+   "value": "miao.py"
   },
   {
    "optionDest": "onefile",
@@ -23,7 +23,7 @@
   },
   {
    "optionDest": "name",
-   "value": "Miao Image"
+   "value": "miao"
   },
   {
    "optionDest": "clean_build",
@@ -46,10 +46,6 @@
    "value": "version.rc"
   },
   {
-   "optionDest": "embed_manifest",
-   "value": true
-  },
-  {
    "optionDest": "uac_admin",
    "value": false
   },
@@ -63,18 +59,6 @@
   },
   {
    "optionDest": "bootloader_ignore_signals",
-   "value": false
-  },
-  {
-   "optionDest": "win_private_assemblies",
-   "value": false
-  },
-  {
-   "optionDest": "win_no_prefer_redirects",
-   "value": false
-  },
-  {
-   "optionDest": "ascii",
    "value": false
   },
   {
