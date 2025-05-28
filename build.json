@@ -63,15 +63,15 @@
   },
   {
    "optionDest": "datas",
-   "value": "demo.miao;."
+   "value": "./demo.miao:."
   },
   {
    "optionDest": "datas",
-   "value": "help.miao;."
+   "value": "./help.miao:."
   },
   {
    "optionDest": "datas",
-   "value": "miao.ico;."
+   "value": "./miao.ico:."
   }
  ],
  "nonPyinstallerOptions": {

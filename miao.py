@@ -5,6 +5,8 @@ from zlib import decompress as zlibdecompress
 import sys, os
 import json, urllib.request
 import webbrowser
+import ssl
+import certifi
 from tkinter import messagebox
 
 version = "0.1.9"
@@ -26,7 +28,8 @@ def open_latest():
     webbrowser.open("https://github.com/Daniel4-Scratch/miao-image/releases/latest")
 
 def update_check():
-    with urllib.request.urlopen(endpoints["latest"]) as url:
+    context = ssl.create_default_context(cafile=certifi.where())
+    with urllib.request.urlopen(endpoints["latest"], context=context) as url:
         data = json.loads(url.read().decode())
         ver = data["tag_name"].split("v")[1]
         #check if version >
